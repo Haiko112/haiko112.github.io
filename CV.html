@@ -1,0 +1,87 @@
+<html>
+<head>
+    <link href="styl.css">
+<SCRIPT>
+    var mycolor=1;
+    function Changecolor()
+    {
+        //document.body.style="background-color:yellow;";
+        if (mycolor==1) {document.body.style.backgroundColor="rgb(0,0,255)";}
+        if (mycolor==2) {document.body.style.backgroundColor="yellow";}
+        if (mycolor==3) {document.body.style.backgroundColor="white";}
+        mycolor++;
+        if (mycolor==4) {mycolor=1;}
+    }
+    function RunAway(element)
+    {
+        var px=Math.random()*(window.innerWidth-50);
+        element.style.position="absolute";
+        element.style.left=px;
+        
+    }
+    function MakaPaka()
+    {
+
+    }
+    function Przyjaciel()
+    {
+        var x=document.getElementById("Tom");
+        x.style.position="absolute";
+        x.hidden=false;
+        // od tej chwili AnimujToma bedzie sie wykonywac co 50ms
+        setInterval(AnimujToma,50);
+    }
+    var tx=1;
+    function AnimujToma ()
+    {
+        var x=document.getElementById("Tom");
+
+        x.style.left=tx;
+        tx++;
+    }
+    function ZamknijReklame()
+    {
+        document.getElementById("ZamRek").hidden=true;
+    }
+    function Nieletnia()
+    {
+    document.getElementById("Niemoge").hidden=false;
+    }
+</SCRIPT>
+</head>
+<body background="kremowy.jfif"><center><p><b><i><u>Moje CV</u></i></b></p></center>
+<p><b>Moje kompetencje</b>: Przez około 2 lata (w 6 i 8 klasie) uczyłam się programowania w instakodzie czyli w nowoczesnej platformie edukacyjnej  przeznaczonej do nauki podstaw programowania. Miałam również 2 lekcje z html gdzie uczyłam się tworzyć stronę internetową z napisami (pogrubionymi, podkreślonymi i pochyłymi), z zdjęciami i z linkami.</p>
+<p><b>Czego chciałabym się nauczyć</b>: programowania.</p>
+<p><b>Plany na przyszłość</b>:<br><b>1)</b>zdać maturę<br><b>2)</b>pójść na studia<br><b>3)</b>zdobyć pracę<br><b>4)</b>kupić mieszkanie<br> <b>5)</b>stworzyc firmę<br> <b>6)</b>kupić lamborghini</p>
+<p> <button onclick="Changecolor()">
+    zmiana koloru strony
+</button>
+</p>
+ 
+<p onclick="Przyjaciel()">
+    Darmowy przyjaciel, kliknij tutaj
+</p>
+<img id="Tom" src="tomek-i-przyjaciele.png" width='100' hidden="true">
+<window style="position: absolute; top:50px; left:25%; width: 50%;"id="ZamRek">
+   <img  src="reklama_redbull_krolowa.jpeg" width="100%" >
+   <button id="KrzyĹźyk" onclick="ZamknijReklame()" style="position: absolute; top:0%;right:0%;">
+        X
+   </button>
+</window>
+<p> <b>
+    Czy chcesz mnie zatrudnić?
+</b>
+</p>
+<button onmouseover="RunAway(this)" onclick="MakaPaka()">
+    nie
+</button>
+<button onclick="Nieletnia()" style="position: absolute; left:5%">
+    tak
+</button>
+<window style="position: absolute; top:50px; left:25%; width: 50%;"id="Niemoge" hidden="true">
+    <img src="księzyc3.GIF" width="100%">
+   <p id="p1"> Dziękuję za ofertę, lecz jestem nieletnia przez co nie mogę pracować.</p>
+</window>
+
+</body>
+</html> 
