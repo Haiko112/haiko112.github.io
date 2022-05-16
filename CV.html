@@ -6,11 +6,12 @@
     function Changecolor()
     {
         //document.body.style="background-color:yellow;";
-        if (mycolor==1) {document.body.style.backgroundColor="rgb(0,0,255)";}
-        if (mycolor==2) {document.body.style.backgroundColor="yellow";}
-        if (mycolor==3) {document.body.style.backgroundColor="white";}
+        if (mycolor==1) {document.body.background="yellow.jpg";}
+        if (mycolor==2) {document.body.background="pastelowyturkus.jpg";}
+        if (mycolor==3) {document.body.background="kamfiolet.jpg";}
+        if (mycolor==4) {document.body.background="kambiałe.jpg";}
         mycolor++;
-        if (mycolor==4) {mycolor=1;}
+        if (mycolor==5) {mycolor=1;}
     }
     function RunAway(element)
     {
@@ -29,15 +30,25 @@
         x.style.position="absolute";
         x.hidden=false;
         // od tej chwili AnimujToma bedzie sie wykonywac co 50ms
-        setInterval(AnimujToma,50);
+        setInterval(AnimujToma,10);
     }
     var tx=1;
+    var kierunek=1;
     function AnimujToma ()
     {
         var x=document.getElementById("Tom");
 
+        if (tx>document.body.clientWidth-x.width) 
+        {
+            kierunek=-1;
+        } 
+        else if (tx<0)
+        {
+            kierunek=1;
+        } 
+
+        tx=tx+kierunek;
         x.style.left=tx;
-        tx++;
     }
     function ZamknijReklame()
     {
@@ -50,11 +61,19 @@
 </SCRIPT>
 </head>
 <body background="kremowy.jfif"><center><p><b><i><u>Moje CV</u></i></b></p></center>
-<p><b>Moje kompetencje</b>: Przez około 2 lata (w 6 i 8 klasie) uczyłam się programowania w instakodzie czyli w nowoczesnej platformie edukacyjnej  przeznaczonej do nauki podstaw programowania. Miałam również 2 lekcje z html gdzie uczyłam się tworzyć stronę internetową z napisami (pogrubionymi, podkreślonymi i pochyłymi), z zdjęciami i z linkami.</p>
+<p><b>Moje kompetencje</b>: Przez około 2 lata (w 6 i 8 klasie) uczyłam się programowania w instakodzie czyli w nowoczesnej platformie edukacyjnej  przeznaczonej do nauki podstaw programowania. Uczestniczyłam również w dwóch lekcjach z html gdzie uczyłam się tworzyć stronę internetową z napisami (pogrubionymi, podkreślonymi i pochyłymi), ze zdjęciami, linkami oraz prostymi skryptami w języku JavaScript. Niektóre znich są widoczne na tej stronie.</p> <p>Podczas bieżącego roku szkolnego moją naukę skoncentrowałam głównie na Javie. Nauczyłam się tam wielu rzeczy. Na przykład jak używać:</p> 
+<ul> <li> scannera</li> <li> instrukcji warunkowych</li> <li>pętli</li> <li> tablic</li> <li> obsługi plików</li> <li>StdDraw</li> </ul>
+<p>Pośród tych niezliczonych rzeczy poznałam również różne systemy liczbowe, po czym stworzyłam program, który umie je obliczać (nawet system szesnastkowy:)). </p>
+<img  src="eclipsezadanie.jpg" width="40%" >
+<img  src="eclipseodp.jpg" width="30%" >
+<p> Poznałam także blendera, w którym praca sprawiła mi przyjemność ponieważ dzięki niemu moje pomysły, które dotychczas istniały jedynie w mojej głowie oraz na kartkach zeszytu mogły ożyć</p>
+<p><b>Projekt, który wykonałam w blenderze:</b></p>
+<img  src="trójzub zosi6.png" width="23%" >
+<img  src="trójzub zosi7.png" width="23%" >
 <p><b>Czego chciałabym się nauczyć</b>: programowania.</p>
 <p><b>Plany na przyszłość</b>:<br><b>1)</b>zdać maturę<br><b>2)</b>pójść na studia<br><b>3)</b>zdobyć pracę<br><b>4)</b>kupić mieszkanie<br> <b>5)</b>stworzyc firmę<br> <b>6)</b>kupić lamborghini</p>
 <p> <button onclick="Changecolor()">
-    zmiana koloru strony
+    zmiana tła strony
 </button>
 </p>
  
